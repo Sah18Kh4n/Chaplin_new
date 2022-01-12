@@ -159,7 +159,6 @@ export class GamesComponent implements OnInit {
     this.cockpitService.getDeleteGame(scm_game_id).subscribe(data => {
       console.log(data + "data deleted successfully")
     });
-
   }
 
   // deleteGame(id: number){

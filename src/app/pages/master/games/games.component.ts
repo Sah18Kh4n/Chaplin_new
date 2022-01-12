@@ -64,7 +64,7 @@ export class GamesComponent implements OnInit {
   selectedItem: number = 1;
   progressWidth: number = 66;
   gameForm: FormGroup;
-  scm_game_id: number
+  scm_game_id: number;
   sourceNames = { 0: 'schedule', 1: 'active', 2: 'completed', 3: 'cancelled' };
   datePickerConfig = {
     format: 'DD-MM-YYYY',
@@ -156,10 +156,10 @@ export class GamesComponent implements OnInit {
   }
 
   getDeletePlayer(scm_game_id: number) {
-    this.cockpitService.getDeleteGame(this.scm_game_id).subscribe(data => {
+    this.cockpitService.getDeleteGame(scm_game_id).subscribe(data => {
       console.log(data + "data deleted successfully")
-      // this.status = 'Delete successful';
     });
+
   }
 
   // deleteGame(id: number){

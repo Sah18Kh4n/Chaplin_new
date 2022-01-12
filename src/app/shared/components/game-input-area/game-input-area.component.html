@@ -1,0 +1,124 @@
+<div class="game-input-area">
+  <form
+    class="game-input-area-form u-padding-top-small"
+    [formGroup]="loginForm"
+    #lgForm="ngForm"
+    (ngSubmit)="handleSubmit()"
+  >
+    <div class="input-fields-container">
+      <div
+        class="input-container u-margin-bottom-extra-small"
+        [ngClass]="{
+          'has-danger':
+            f.farmer1.invalid &&
+            (f.farmer1.dirty || f.farmer1.touched || lgForm.submitted),
+          'has-success':
+            f.farmer1.valid &&
+            (f.farmer1.dirty || f.farmer1.touched || lgForm.submitted)
+        }"
+      >
+        <label>(Supplier farmer 1)</label>
+        <div class="break"></div>
+        <input
+          type="text"
+          id="inputfarmer1"
+          formControlName="farmer1"
+          class="input-field"
+          placeholder="Order Quantity in Bushel"
+        />
+        <div class="break"></div>
+        <div
+          *ngIf="
+            (f.farmer1.dirty || f.farmer1.touched || lgForm.submitted) &&
+            f.farmer1.errors
+          "
+          class="help-block p-2"
+        >
+          <div style="color: red" *ngIf="f.farmer1.errors.required">
+            Farmer1 is required
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="input-container u-margin-bottom-extra-small"
+        [ngClass]="{
+          'has-danger':
+            f.farmer2.invalid &&
+            (f.farmer2.dirty || f.farmer2.touched || lgForm.submitted),
+          'has-success':
+            f.farmer2.valid &&
+            (f.farmer2.dirty || f.farmer2.touched || lgForm.submitted)
+        }"
+      >
+        <label>(Supplier farmer 2)</label>
+        <div class="break"></div>
+        <input
+          type="text"
+          id="inputfarmer2"
+          formControlName="farmer2"
+          class="input-field"
+          placeholder="Order Quantity in Bushel"
+        />
+        <div class="break"></div>
+        <div
+          *ngIf="
+            (f.farmer2.dirty || f.farmer2.touched || lgForm.submitted) &&
+            f.farmer2.errors
+          "
+          class="help-block p-2"
+        >
+          <div style="color: red" *ngIf="f.farmer2.errors.required">
+            Farmer2 is required
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="input-container u-margin-bottom-extra-small"
+        [ngClass]="{
+          'has-danger':
+            f.farmer3.invalid &&
+            (f.farmer3.dirty || f.farmer3.touched || lgForm.submitted),
+          'has-success':
+            f.farmer3.valid &&
+            (f.farmer3.dirty || f.farmer3.touched || lgForm.submitted)
+        }"
+      >
+        <label>(Supplier farmer 3)</label>
+        <div class="break"></div>
+        <input
+          type="text"
+          id="inputfarmer3"
+          formControlName="farmer3"
+          class="input-field"
+          placeholder="Order Quantity in Bushel"
+        />
+        <div class="break"></div>
+        <div
+          *ngIf="
+            (f.farmer3.dirty || f.farmer3.touched || lgForm.submitted) &&
+            f.farmer3.errors
+          "
+          class="help-block p-2"
+        >
+          <div style="color: red" *ngIf="f.farmer3.errors.required">
+            Farmer3 is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="u-center-text u-margin-top-extra-small">
+      <button class="btn sm u-margin-horizontal-extra-small" type="reset">
+        Reset
+      </button>
+      <button class="btn sm u-margin-horizontal-extra-small" type="submit">
+        Submit
+      </button>
+    </div>
+
+    <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button> -->
+    <!-- <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
+  </form>
+</div>

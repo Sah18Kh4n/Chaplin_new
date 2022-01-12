@@ -1,0 +1,6 @@
+<ul class="list-inline rating-list" *ngFor="let star of stars; let i= index" style="display: inline-block"> 
+    <!-- <li (click)="countStar(star)" id="{{'starId'+i}}" [ngClass]="{'selected': (star <= selectedValue)}"  -->
+    <li id="{{'starId'+i}}" [ngClass]="{'selected': true}" > ★
+     <!-- <i class="fa fa-star"></i> -->
+    </li>
+</ul>

@@ -1,0 +1,8 @@
+<div class="master-bar-item">
+  <span class="item-text">{{label}}</span>
+  <span class="item-count">
+    <span class="digit" *ngFor="let item of getFormattedNumber(count)">
+      {{ item }}
+    </span>
+  </span>
+</div>

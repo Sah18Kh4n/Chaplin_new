@@ -1,0 +1,38 @@
+.master-bar-item {
+  padding: 0rem 1rem;
+  background-color: $color-primary;
+  border: 1px solid $color-primary-dark;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  padding-right: 10rem;
+  position: relative;
+
+  .item-text {
+    align-self: center;
+  }
+
+  .item-count {
+    color: $color-white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-left: 1rem;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    top: -4px;
+
+    .digit {
+        background: linear-gradient(to bottom right, #1d1d1d, #000000, #363535);
+        // background: linear-gradient(to bottom, #1d1d1d, #000000, #363535);
+      display: inline-block;
+      width: 30px;
+      border-radius: 2px;
+      margin: 1px #c5c5c5;
+      font-size: 2rem;
+    }
+  }
+}

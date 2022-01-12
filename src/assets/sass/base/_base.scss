@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px; */
+  // This define what 1rem is
+  // font-size: 62.5%;
+  font-size: 80%;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.babylon {
+  font-family: Babylon;
+}
+
+.sourcesans {
+  font-family: SourceSans;
+}
+.block-bg {
+  background-image: url("/assets/img/block-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  background-size: contain;
+}
+.grey-bg {
+  background-color: $color-bg-grey;
+  background: linear-gradient(
+    to right,
+    $color-bg-grey-light,
+    $color-bg-grey,
+    $color-bg-grey-dark
+  );
+  // height: calc(100vh - 40px);
+  height: 100vh;
+}

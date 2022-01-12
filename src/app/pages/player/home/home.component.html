@@ -1,0 +1,117 @@
+<app-header>
+  <div class="header-title babylon">CHAPLIN YUPS!</div>
+</app-header>
+
+<section class="dashboard bg-cockpit">
+  <div class="dashboard-top-bar">
+    <!-- <button
+      class="btn primary u-padding-top-extra-small u-padding-bottom-extra-small" style="line-height: 1"
+    >
+      Round {{ round }}
+    </button> -->
+    <app-player-bar-item label="Balance">
+      <div class="item-value">{{ balance }}</div>
+      <div class="item-progress">
+        <i class="fa fa-usd" aria-hidden="true"></i>
+      </div>
+      <div class="item-progressbar">
+        <app-progressbar
+          size="sm"
+          [width]="progressWidth"
+          color="red"
+        ></app-progressbar>
+      </div>
+    </app-player-bar-item>
+
+    <app-player-bar-item label="Time">
+      <div class="item-value">
+        <app-count-down [minutes]="time"> </app-count-down>
+      </div>
+      <div class="item-progress">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+      </div>
+      <div class="item-progressbar">
+        <app-progressbar
+          size="sm"
+          [width]="progressWidth"
+          color="secondary"
+        ></app-progressbar>
+      </div>
+    </app-player-bar-item>
+
+    <app-player-bar-item label="Demand">
+      <div class="item-value">{{ demand }}</div>
+      <div class="item-progress">
+        <i class="fa fa-shield" aria-hidden="true"></i>
+      </div>
+      <div class="item-progressbar">
+        <app-progressbar
+          size="sm"
+          [width]="progressWidth"
+          color="orange"
+        ></app-progressbar>
+      </div>
+    </app-player-bar-item>
+  </div>
+
+  <div class="dashboard-cockpit-wrapper">
+    <div class="dashboard-cockpit">
+      <div class="dashboard-carousel">
+        <app-carousel
+          [slides-to-show]="3"
+          [slides-to-scroll]="1"
+          [is-infinite]="false"
+        >
+          <a class="carousel-item" [routerLink]="['/app/player/supply-chain-network']" routerLinkActive="router-link-active" >
+            <svg-icon
+              src="/assets/svgs/SVG files__Play icon.svg"
+              [svgStyle]="{ 'width.px': 80, fill: 'rgba(4,184,147,1)' }"
+            ></svg-icon>
+            <p class="carousel-item-text">Play</p>
+          </a>
+
+          <a class="carousel-item">
+            <svg-icon
+              src="/assets/svgs/SVG files__Network icon.svg"
+              [svgStyle]="{ 'width.px': 80, fill: 'rgba(4,184,147,1)' }"
+            ></svg-icon>
+            <p class="carousel-item-text">Learnings</p>
+          </a>
+
+          <a class="carousel-item" >
+            <svg-icon
+              src="/assets/svgs/SVG files__Dashboard icon.svg"
+              [svgStyle]="{ 'width.px': 80, fill: 'rgba(4,184,147,1)' }"
+            ></svg-icon>
+            <p class="carousel-item-text">Dashboard</p>
+          </a>
+
+          <a class="carousel-item" href="/">
+            <svg-icon
+              src="/assets/svgs/SVG files__Notifications.svg"
+              [svgStyle]="{ 'width.px': 80, fill: 'rgba(4,184,147,1)' }"
+            ></svg-icon>
+            <p class="carousel-item-text">Notifications</p>
+          </a>
+        </app-carousel>
+      </div>
+
+      <div class="dashboard-progressbar" *ngIf="false">
+        <app-progressbar
+          [width]="progressWidth"
+          color="secondary"
+        ></app-progressbar>
+      </div>
+
+      <div class="dashboard-button">
+        <button class="btn primary btn-block btn-font-bold" *ngIf="!isTimesUp">
+          Next Game Starts in: <app-count-down [minutes]="1" (timesUp)="isTimesUp = true"> </app-count-down>
+        </button>
+
+        <button class="btn primary btn-block btn-font-bold" (click)="onStartGame()" *ngIf="isTimesUp">
+          Start Game 
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

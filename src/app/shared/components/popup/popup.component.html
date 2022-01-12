@@ -1,0 +1,17 @@
+<div class="popup {{ position }}">
+  <ng-content></ng-content>
+  <span class="popuptext" [ngClass]="{ show: show }">
+    <!-- <i
+      class="close fa fa-times-circle-o"
+      aria-hidden="true"
+      (click)="toggleShow()"
+    ></i> -->
+    <img
+      class="close"
+      src="/assets/img/popup/close.png"
+      alt="close"
+      (click)="toggleShow()"
+    />
+    <ng-content select=".popup-text"></ng-content>
+  </span>
+</div>

@@ -1,0 +1,22 @@
+.game-input-area {
+  padding: 1rem;
+
+  input {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  ::placeholder {
+    color: $color-white;
+    opacity: 0.5;
+    font-weight: 100;
+  }
+
+  .input-fields-container {
+    height: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include scrollbar;
+  }
+}

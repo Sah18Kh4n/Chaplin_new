@@ -1,0 +1,153 @@
+.chart-block {
+  // height: 50vh;
+  border: 3px solid $color-primary;
+  border-radius: 2rem;
+  padding: 0rem;
+  margin: 0.5rem 2rem;
+  position: relative;
+  height: 50vh;
+  transition: 1s ease-in-out;
+  overflow: hidden;
+
+  
+  .game-details {
+    height: 100%;
+    width: 100%;
+  }
+}
+.game-selector {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 0.5rem;
+  transition: 0.5s ease-in-out;
+}
+@media screen and (max-width: 1200px) {
+  .chart-block {
+    height: 45vh;
+  }
+}
+.chart-block.full {
+  height: calc(100vh - 80px);
+  padding-top: 8vh;
+
+  .game-selector {
+    margin-top: 5rem;
+    transition: 0.5s ease-in-out;
+  }
+}
+.dashboard-chart.full {
+  height: calc(100vh - 72px);
+  padding-top: 8vh;
+}
+.dashboard-page {
+  .circle-area .up-arrow {
+    background-color: $color-bg-grey-dark;
+  }
+  .bottom-block {
+    height: 50vh;
+    background-color: $color-bg-grey-dark;
+    z-index: 2;
+    color: $color-white;
+    width: 100%;
+
+    .col-block-bg {
+      width: 100%;
+    }
+  }
+  .left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: $color-white;
+    height: calc(100vh - 80px);
+    .flex-item {
+      text-align: center;
+    }
+    .round {
+      h2 {
+        color: $color-primary;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        font-weight: 200;
+      }
+      p {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        color: $color-white;
+      }
+    }
+    .time {
+      border-radius: 1rem;
+      border: 1px solid $color-primary;
+      padding: 0rem 1rem;
+      font-size: 1.5rem;
+
+      h3 {
+        color: $color-primary;
+        font-weight: 400;
+      }
+
+      #minutes {
+        font-size: 2rem !important;
+      }
+    }
+    .demand {
+      
+      h4 {
+        font-size: 1.8rem;
+        color: $color-primary;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+      p {
+        font-size: 1.8rem;
+        font-weight: 100;
+        line-height: 1.2;
+      }
+      .time-zone {
+        font-size: 2rem;
+        color: $color-dark-blue-light;
+        line-height: 1.5;
+      }
+    }
+
+    .board {
+      .heading {
+        background: linear-gradient($color-dark-blue-light, $color-dark-blue);
+        padding: 0.1rem 2rem;
+        border: 1px solid $color-dark-blue-dark;
+        border-radius: 0.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .rating {
+        background-color: $color-bg-grey-dark;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        .rating-item {
+          width: 80px;
+        }
+      }
+    }
+  }
+}
+
+.player-dashboard {
+  table td {
+    font-size: 1rem;
+  }
+
+  .dashboard-chart {
+    // padding-bottom: 2rem;
+  }
+}

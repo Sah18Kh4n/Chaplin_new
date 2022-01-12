@@ -1,0 +1,612 @@
+
+<!-- <section class="grey-bg"> -->
+<div class="grey-bg" style="overflow: auto;">
+  <app-header>
+    <div class="header-title babylon">TEMPLATES</div>
+  </app-header>
+<!--
+  <div class="templates-page">
+    <div class="row u-margin-bottom-small">
+
+
+      <div class="col-3-of-4 u-relative">
+        <div class="templates-carousel">
+          <app-carousel [slides-to-show]="3" [slides-to-scroll]="1" [is-infinite]="false">
+            <a (click)="onItemClick(1)" class="carousel-item" [ngClass]="{ selected: selectedItem === 1 }"  id="home-tab" data-toggle="tab" href="#home2" >
+              <svg-icon src="/assets/svgs/SVG files__Alpha icon.svg"
+                [svgStyle]="{ 'width.px': 60, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+              <p class="carousel-item-text">Grain Supply Chain<br />GM 01</p>
+            </a>
+
+            <a (click)="onItemClick(2)" class="carousel-item" [ngClass]="{ selected: selectedItem === 2 }" id="profile-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">
+              <svg-icon src="/assets/svgs/SVG files__Beta icon .svg"
+                [svgStyle]="{ 'width.px': 60, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+              <p class="carousel-item-text">O&G Supply Chain <br />GM 02</p>
+            </a>
+
+            <a (click)="onItemClick(3)" class="carousel-item" [ngClass]="{ selected: selectedItem === 3 }">
+              <svg-icon src="/assets/svgs/SVG files__Omega icon.svg"
+                [svgStyle]="{ 'width.px': 60, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+              <p class="carousel-item-text">FMGC Supply Chain <br />GM 03</p>
+            </a>
+
+
+          </app-carousel>
+        </div>
+      </div>
+      <div class="col-1-of-4 button-container">
+        <button class="btn button btn-font-bold btn-font-lg" (click)="onShow()">
+          Add Template +
+        </button>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="templates-details" id="home2" role="tabpanel" aria-labelledby="home-tab">
+      <div class="row u-margin-bottom-medium" >
+        <div class="col-1-of-3">
+          <app-text-detail label="Template ID" [data]="templateData?.tmplt_id" ></app-text-detail>
+        </div>
+        <div class="col-1-of-3">
+          <app-text-detail label="Name" [data]="templateData?.tmplt_name"></app-text-detail>
+        </div>
+        <div class="col-1-of-3">
+          <app-text-detail label="Industry" [data]="templateData?.tmplt_industry"></app-text-detail>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3-of-4">
+          <app-text-detail label="Description" [data]="templateData?.tmplt_desc"></app-text-detail>
+
+          <div class="u-margin-bottom-medium"></div>
+
+          <app-text-detail label="Objective" [data]="templateData?.tmplt_objective"></app-text-detail>
+        </div>
+        <div class="col-1-of-4">
+          <div class="action-buttons">
+            <button class="btn btn-block u-margin-bottom-extra-small lg" (click)="goToSupplyChain()">
+              <span class="button-icons">
+                <svg-icon src="/assets/svgs/SVG files__Network icon.svg"
+                  [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+              </span><span class="btn-text">Network</span>
+            </button>
+            <button class="btn btn-block u-margin-bottom-extra-small lg">
+              <span class="button-icons">
+                <svg-icon src="/assets/svgs/SVG files__Edit icon.svg"
+                  [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+              </span><span class="btn-text">Edit</span>
+            </button>
+            <button class="btn btn-block u-margin-bottom-extra-small lg">
+              <span class="button-icons">
+                <svg-icon src="/assets/svgs/SVG files__Delete icon.svg"
+                  [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+              </span><span class="btn-text">Delete</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+
+
+  <div class='parent'>
+    <div class='child'>
+       <div class="mb-5 mt-5">
+      <div class="ex1">
+        <div class="" id="myTab" role="tablist" style="display: flex;" >
+          <p class="nav-item" *ngFor="let template of totalTemplate; let i = index"><a class="nav-link"  id={{template.tmplt_id}} >
+            {{template.tmplt_name}}
+          </a>
+        </p>
+      </div>
+
+
+        <!-- <ul class="nav nav-pills" id="myTab" role="tablist">
+            <li class="nav-item"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Grain Supply Chain</a></li>
+            <li class="nav-item"><a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">O&G Supply Chain</a></li>
+            <li class="nav-item"><a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact" aria-selected="false">FMGC Supply Chain</a></li>
+
+
+
+           <li class="nav-item"><a class="nav-link" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Grain Supply Chain</a></li>
+            <li class="nav-item"><a class="nav-link" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Grain Supply Chain</a></li>
+            <li class="nav-item"><a class="nav-link" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Grain Supply Chain</a></li>
+            <li class="nav-item"><a class="nav-link" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Grain Supply Chain</a></li>
+            <li class="nav-item"><a class="nav-link" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Grain Supply Chain</a></li>
+          </ul> -->
+
+      </div>
+
+    </div>
+  </div>
+    <div class='child'> <div class="col-1-of-4 button-container" style="text-align: right;">
+      <button class="btn button btn-font-bold btn-font-lg addtemplate" (click)="onShow()">
+        Add Template +
+      </button>
+    </div></div>
+  </div>
+
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-sm-8">
+
+<div class="clearfix"></div>
+  <div class="tab-content mb-4">
+    <div class="tab-pane fade show active templateform" >
+      <div class="templates-details" >
+        <div class="row u-margin-bottom-medium " style="display: flex;" >
+          <div  *ngFor="let template of totalTemplate; let i = index ">
+            <div class="row">
+              <div class="row">
+                <div class="col-sm">
+                  <div class="text-details">
+                    <div class="text-label">Template ID</div>
+                    <div class="text-data">{{template.tmplt_id}}</div>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="text-details">
+                    <div class="text-label">Name</div>
+                    <div class="text-data">{{template.tmplt_name}}</div>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="text-details">
+                    <div class="text-label">Industry</div>
+                    <div class="text-data">{{template.tmplt_industry}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8" style="margin-top: 30px;">
+
+                <div class="row">
+                  <div class="col">
+                    <div class="text-details">
+                      <div class="text-label">Description</div>
+                      <div class="text-data">{{template.tmplt_desc}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="text-details">
+                      <div class="text-label">Objective</div>
+                      <div class="text-data">{{template.tmplt_objective}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="action-buttons u-margin-top-small">
+                  <button class="btn btn-block u-margin-bottom-extra-small lg" (click)="goToSupplyChain()">
+                    <span class="button-icons">
+                      <svg-icon src="/assets/svgs/SVG files__Network icon.svg"
+                        [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                    </span><span class="btn-text">Network</span>
+                  </button>
+                  <button class="btn btn-block u-margin-bottom-extra-small lg">
+                    <span class="button-icons">
+                      <svg-icon src="/assets/svgs/SVG files__Edit icon.svg"
+                        [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                    </span><span class="btn-text">Edit</span>
+                  </button>
+                  <button class="btn btn-block u-margin-bottom-extra-small lg" (click)="getDeletePlayer(id)">
+                    <span class="button-icons">
+                      <svg-icon src="/assets/svgs/SVG files__Delete icon.svg"
+                        [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                    </span><span class="btn-text">Delete</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <br>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                          <!-- <div class="col-1-of-3">
+
+                            <app-text-detail label="Template ID" [data]="templateData?.tmplt_id" ></app-text-detail>
+                          </div>
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Name" [data]="templateData?.tmplt_name"></app-text-detail>
+                          </div>
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Industry" [data]="templateData?.tmplt_industry"></app-text-detail>
+                          </div> -->
+                        <!-- </div> -->
+                        <!-- <div class="row"> -->
+                          <!-- <div class="col-3-of-4">
+                            <app-text-detail label="Description" [data]="templateData?.tmplt_desc"></app-text-detail>
+
+                            <div class="u-margin-bottom-medium"></div>
+
+                            <app-text-detail label="Objective" [data]="templateData?.tmplt_objective"></app-text-detail>
+                          </div> -->
+                          <!-- <div class="col-1-of-4">
+                            <div class="action-buttons">
+                              <button class="btn btn-block u-margin-bottom-extra-small lg" (click)="goToSupplyChain()">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Network icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Network</span>
+                              </button>
+                              <button class="btn btn-block u-margin-bottom-extra-small lg">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Edit icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Edit</span>
+                              </button>
+                              <button class="btn btn-block u-margin-bottom-extra-small lg">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Delete icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Delete</span>
+                              </button>
+                            </div>
+                          </div> -->
+                        <!-- </div> -->
+                      <!-- </div>
+                    </div>
+                    <div class="tab-pane fade templateform" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
+                      <div class="templates-details" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row u-margin-bottom-medium" >
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Template ID" [data]="templateData1?.tmplt_id" ></app-text-detail>
+                          </div>
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Name" [data]="templateData1?.tmplt_name"></app-text-detail>
+                          </div>
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Industry" [data]="templateData1?.tmplt_industry"></app-text-detail>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-3-of-4">
+                            <app-text-detail label="Description" [data]="templateData1?.tmplt_desc"></app-text-detail>
+
+                            <div class="u-margin-bottom-medium"></div>
+
+                            <app-text-detail label="Objective" [data]="templateData1?.tmplt_objective"></app-text-detail>
+                          </div>
+                          <div class="col-1-of-4">
+                            <div class="action-buttons">
+                              <button class="btn btn-block u-margin-bottom-extra-small lg" (click)="goToSupplyChain()">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Network icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Network</span>
+                              </button>
+                              <button class="btn btn-block u-margin-bottom-extra-small lg">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Edit icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Edit</span>
+                              </button>
+                              <button class="btn btn-block u-margin-bottom-extra-small lg">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Delete icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Delete</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <div class="tab-pane fade templateform" id="contact2" role="tabpanel" aria-labelledby="contact-tab">
+                      <div class="templates-details" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row u-margin-bottom-medium" >
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Template ID" [data]="templateData2?.tmplt_id" ></app-text-detail>
+                          </div>
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Name" [data]="templateData2?.tmplt_name"></app-text-detail>
+                          </div>
+                          <div class="col-1-of-3">
+                            <app-text-detail label="Industry" [data]="templateData2?.tmplt_industry"></app-text-detail>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-3-of-4">
+                            <app-text-detail label="Description" [data]="templateData2?.tmplt_desc"></app-text-detail>
+
+                            <div class="u-margin-bottom-medium"></div>
+
+                            <app-text-detail label="Objective" [data]="templateData2?.tmplt_objective"></app-text-detail>
+                          </div>
+                          <div class="col-1-of-4">
+                            <div class="action-buttons">
+                              <button class="btn btn-block u-margin-bottom-extra-small lg" (click)="goToSupplyChain()">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Network icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Network</span>
+                              </button>
+                              <button class="btn btn-block u-margin-bottom-extra-small lg">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Edit icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Edit</span>
+                              </button>
+                              <button class="btn btn-block u-margin-bottom-extra-small lg">
+                                <span class="button-icons">
+                                  <svg-icon src="/assets/svgs/SVG files__Delete icon.svg"
+                                    [svgStyle]="{ 'width.px': 25, fill: 'rgba(4,184,147,1)' }"></svg-icon>
+                                </span><span class="btn-text">Delete</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+</div>
+
+<!-- </section> -->
+
+<app-modal [show]="show" (handleClose)="handleClose()" heading="Add Template">
+  <div class="app-modal-body">
+    <form class="form-signin u-padding-top-small" [formGroup]="templateForm" #lgForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row u-margin-bottom-extra-small">
+        <div class="col-1-of-2">
+          <div class="input-container input-wrapper" [ngClass]="{
+              'has-danger':
+                f.scmValue.invalid &&
+                (f.scmValue.dirty || f.scmValue.touched || lgForm.submitted),
+              'has-success':
+                f.scmValue.valid &&
+                (f.scmValue.dirty || f.scmValue.touched || lgForm.submitted)
+            }">
+            <label class="input-label">Choose SCM Value Chain</label>
+            <div class="break"></div>
+            <select formControlName="scmValue" class="input-field" placeholder="scmValue">
+              <option value="">--select--</option>
+              <option>Agriculture</option>
+              <option value="Select">O&G</option>
+              <option value="Select">FMCG Retail</option>
+            </select>
+            <i class="fa fa-caret-down fa-lg"></i>
+            <div class="break"></div>
+            <div *ngIf="
+                (f.scmValue.dirty || f.scmValue.touched || lgForm.submitted) &&
+                f.scmValue.errors
+              " class="help-block p-2">
+              <div style="color: red; font-weight: 600" *ngIf="f.scmValue.errors.required">
+                * SCM Value is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <div class="input-container input-wrapper" [ngClass]="{
+              'has-danger':
+                f.scEchelon.invalid &&
+                (f.scEchelon.dirty || f.scEchelon.touched || lgForm.submitted),
+              'has-success':
+                f.scEchelon.valid &&
+                (f.scEchelon.dirty || f.scEchelon.touched || lgForm.submitted)
+            }">
+            <label class="input-label">Choose SC Echelon</label>
+            <div class="break"></div>
+            <select formControlName="scEchelon" class="input-field" placeholder="scEchelon">
+              <option value="">--select--</option>
+              <option >Level 1</option>
+              <option >Level 2</option>
+              <option >Level 3</option>
+            </select>
+            <i class="fa fa-caret-down fa-lg"></i>
+            <div class="break"></div>
+            <div *ngIf="
+                (f.scEchelon.dirty ||
+                  f.scEchelon.touched ||
+                  lgForm.submitted) &&
+                f.scEchelon.errors
+              " class="help-block p-2">
+              <div style="color: red; font-weight: 600" *ngIf="f.scEchelon.errors.required">
+                * Sc Echelon is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row u-margin-bottom-extra-small">
+        <div class="col-1-of-2">
+          <div class="input-container input-wrapper" [ngClass]="{
+              'has-danger':
+                f.skuDemandModel.invalid &&
+                (f.skuDemandModel.dirty ||
+                  f.skuDemandModel.touched ||
+                  lgForm.submitted),
+              'has-success':
+                f.skuDemandModel.valid &&
+                (f.skuDemandModel.dirty ||
+                  f.skuDemandModel.touched ||
+                  lgForm.submitted)
+            }">
+            <label class="input-label">Upload SKU Demand Model</label>
+            <div class="break"></div>
+            <input type="text" class="input-field upload" placeholder="-Upload File-" formControlName="skuDemandModel"
+              (click)="skuDemandModelInput.click()" readonly />
+            <i class="fa fa-upload fa-lg"></i>
+            <input type="file" style="display: none" #skuDemandModelInput
+              (change)="onFileChanged($event, 'skuDemandModel', 'skuDemandModelFile')" />
+            <div class="break"></div>
+            <div *ngIf="
+                (f.skuDemandModel.dirty ||
+                  f.skuDemandModel.touched ||
+                  lgForm.submitted) &&
+                f.skuDemandModel.errors
+              " class="help-block p-2">
+              <div style="color: red; font-weight: 600" *ngIf="f.skuDemandModel.errors.required">
+                * Sku Demand Model is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <div class="input-container input-wrapper" [ngClass]="{
+              'has-danger':
+                f.skuFinancialModel.invalid &&
+                (f.skuFinancialModel.dirty ||
+                  f.skuFinancialModel.touched ||
+                  lgForm.submitted),
+              'has-success':
+                f.skuFinancialModel.valid &&
+                (f.skuFinancialModel.dirty ||
+                  f.skuFinancialModel.touched ||
+                  lgForm.submitted)
+            }">
+            <label class="input-label">Upload Financial Model</label>
+            <div class="break"></div>
+            <input type="text" class="input-field upload" placeholder="-Upload File-"
+              formControlName="skuFinancialModel" (click)="skuFinancialModelInput.click()" readonly />
+            <i class="fa fa-upload fa-lg"></i>
+            <input type="file" style="display: none" #skuFinancialModelInput
+              (change)="onFileChanged($event, 'skuFinancialModel', 'skuFinancialModelFile')" />
+            <div class="break"></div>
+            <div *ngIf="
+                (f.skuFinancialModel.dirty ||
+                  f.skuFinancialModel.touched ||
+                  lgForm.submitted) &&
+                f.skuFinancialModel.errors
+              " class="help-block p-2">
+              <div style="color: red; font-weight: 600" *ngIf="f.skuFinancialModel.errors.required">
+                * Sku Financial Model is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row u-margin-bottom-extra-small">
+        <div class="col-1-of-2">
+          <div class="input-container input-wrapper" [ngClass]="{
+              'has-danger':
+                f.uploadOrderLeadTimes.invalid &&
+                (f.uploadOrderLeadTimes.dirty ||
+                  f.uploadOrderLeadTimes.touched ||
+                  lgForm.submitted),
+              'has-success':
+                f.uploadOrderLeadTimes.valid &&
+                (f.uploadOrderLeadTimes.dirty ||
+                  f.uploadOrderLeadTimes.touched ||
+                  lgForm.submitted)
+            }">
+            <label class="input-label">Upload Order Lead-Times</label>
+            <div class="break"></div>
+            <input type="text" class="input-field upload" placeholder="-Upload File-"
+              formControlName="uploadOrderLeadTimes" (click)="uploadOrderLeadTimesInput.click()" readonly />
+            <i class="fa fa-upload fa-lg"></i>
+            <input type="file" style="display: none" #uploadOrderLeadTimesInput
+              (change)="onFileChanged($event, 'uploadOrderLeadTimes', 'uploadOrderLeadTimesFile')" />
+            <div class="break"></div>
+            <div *ngIf="
+                (f.uploadOrderLeadTimes.dirty ||
+                  f.uploadOrderLeadTimes.touched ||
+                  lgForm.submitted) &&
+                f.uploadOrderLeadTimes.errors
+              " class="help-block p-2">
+              <div style="color: red; font-weight: 600" *ngIf="f.uploadOrderLeadTimes.errors.required">
+                * Upload Order Lead Times is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <div class="input-container input-wrapper" [ngClass]="{
+              'has-danger':
+                f.uploadGameRules.invalid &&
+                (f.uploadGameRules.dirty ||
+                  f.uploadGameRules.touched ||
+                  lgForm.submitted),
+              'has-success':
+                f.uploadGameRules.valid &&
+                (f.uploadGameRules.dirty ||
+                  f.uploadGameRules.touched ||
+                  lgForm.submitted)
+            }">
+            <label class="input-label">Upload Game Rules</label>
+            <div class="break"></div>
+            <input type="text" class="input-field upload" placeholder="-Upload File-" formControlName="uploadGameRules"
+              (click)="uploadGameRulesInput.click()" readonly />
+            <i class="fa fa-upload fa-lg"></i>
+            <input type="file" style="display: none" #uploadGameRulesInput
+              (change)="onFileChanged($event, 'uploadGameRules', 'uploadGameRulesFile')" />
+            <div class="break"></div>
+            <div *ngIf="
+                (f.uploadGameRules.dirty ||
+                  f.uploadGameRules.touched ||
+                  lgForm.submitted) &&
+                f.uploadGameRules.errors
+              " class="help-block p-2">
+              <div style="color: red; font-weight: 600" *ngIf="f.uploadGameRules.errors.required">
+                * Upload Game rules is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row u-margin-bottom-extra-small">
+        <div class="input-container input-wrapper" [ngClass]="{
+            'has-danger':
+              f.gameObjectives.invalid &&
+              (f.gameObjectives.dirty ||
+                f.gameObjectives.touched ||
+                lgForm.submitted),
+            'has-success':
+              f.gameObjectives.valid &&
+              (f.gameObjectives.dirty ||
+                f.gameObjectives.touched ||
+                lgForm.submitted)
+          }">
+          <label class="input-label">Game Objectives</label>
+          <div class="break"></div>
+          <select formControlName="gameObjectives" class="input-field" placeholder="gameObjectives">
+            <option value="">--select--</option>
+            <option>Maximize Bank balance at end of game play</option>
+            <option value="Select">Maximize Tank Storage at end of game play</option>
+            <option value="Select">Maximize Bank balance at end of game play</option>
+          </select>
+          <i class="fa fa-caret-down fa-lg"></i>
+          <div class="break"></div>
+          <div *ngIf="
+              (f.gameObjectives.dirty ||
+                f.gameObjectives.touched ||
+                lgForm.submitted) &&
+              f.gameObjectives.errors
+            " class="help-block p-2">
+            <div style="color: red; font-weight: 600" *ngIf="f.gameObjectives.errors.required">
+              * Game Objectives is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-buttons u-margin-top-medium u-margin-bottom-small">
+        <button class="btn btn-block btn-font-bold u-margin-horizontal-extra-small" type="button" (click)="onPublish()">
+          Publish
+        </button>
+        <button class="btn btn-block btn-font-bold u-margin-horizontal-extra-small" type="submit">
+          Save
+        </button>
+        <button class="btn btn-block btn-font-bold u-margin-horizontal-extra-small" type="button" (click)="onCancel()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- <div class="app-modal-footer">Footer</div> -->
+</app-modal>

@@ -1,0 +1,62 @@
+.login-bg {
+  background-image: url("/assets/img/login/image2.png");
+  background-repeat: no-repeat;
+  // position: absolute;
+  // left: 0px;
+  // top: 0px;
+  // bottom: 0;
+  // right: 0;
+  /*width: 1050px;
+    height: 587px; */
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+
+  .heading-background {
+    background: -moz-linear-gradient(
+      11.07% 13.04% -38.62deg,
+      rgba(40, 47, 64, 1) 14.44%,
+      rgba(58, 73, 97, 1) 62.8%,
+      rgba(66, 80, 103, 1) 71.43%,
+      rgba(89, 101, 120, 1) 84.99%,
+      rgba(121, 130, 144, 1) 100%
+    );
+    background: #000000;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+
+  .hitachi-img {
+    background-image: url("/assets/img/login/yHCAjj_1_.png");
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 34px;
+    margin: auto;
+  }
+  .checkbox-wrapper {
+    label {
+        display: block;
+        padding-left: 15px;
+        text-indent: -15px;
+        color: $color-white;
+	line-height: 1;
+
+      }
+      input {
+        width: 13px;
+        height: 13px;
+        padding: 2px 0;
+        margin:0;
+        vertical-align: bottom;
+        position: relative;
+        top: -1px;
+        *overflow: hidden;
+      }
+  }
+  .account-link {
+      text-decoration: none;
+  }
+}

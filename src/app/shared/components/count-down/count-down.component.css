@@ -1,0 +1,12 @@
+.timer {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  min-width: 200px;
+}
+.timer span {
+  font-size: 1.5rem;
+  margin: 0 3px;
+  font-weight: 500;
+}

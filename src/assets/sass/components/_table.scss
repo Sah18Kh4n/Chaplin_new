@@ -1,0 +1,149 @@
+// .table {
+//   width: 100%;
+//   border-spacing: 0;
+//   font-size: 1.5rem;
+//   height: 100%;
+//   overflow-y: scroll;
+
+//   tbody,
+//   thead tr {
+//     display: block;
+//   }
+
+//   thead {
+//     background: black;
+//     border-radius: 2rem;
+
+//     th {
+//       font-size: 1.8rem;
+//       font-weight: 500;
+//       text-align: center;
+
+//       &:first-child {
+//         border-top-left-radius: 2rem;
+//         border-bottom-left-radius: 2rem;
+//       }
+
+//       &:last-child {
+//         border-top-right-radius: 2rem;
+//         border-bottom-right-radius: 2rem;
+//       }
+//     }
+
+//   }
+//   tbody {
+//     height: 20vh; /* Just for the demo          */
+//     overflow-y: auto; /* Trigger vertical scroll    */
+//     overflow-x: hidden; /* Hide the horizontal scroll */
+//     width: 100%;
+
+//     tr {
+//       width: 100%;
+//       td {
+//         text-align: center;
+//         width: 20%;
+//       }
+//     }
+//   }
+// }
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  font-size: 1.4rem;
+}
+
+thead,
+tbody,
+tr,
+th,
+td {
+  display: block;
+}
+
+thead tr {
+  /* fallback */
+  width: 97%;
+  /* minus scroll bar width */
+  width: -webkit-calc(100% - 16px);
+  width: -moz-calc(100% - 16px);
+  width: calc(100% - 16px);
+}
+
+thead {
+  background: black;
+  border-radius: 1rem;
+
+  th {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    color: $color-primary;
+    white-space: nowrap;
+
+    &:first-child {
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    &:last-child {
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+  }
+}
+
+tr:after {
+  /* clearing float */
+  content: " ";
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+tbody {
+  height: 175px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  // &::-webkit-scrollbar {
+  //   width: 10px;
+  // }
+
+  // &::-webkit-scrollbar-track {
+  //   background-color: $color-primary;
+  //   // border-radius: 100px;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   // border-radius: 100px;
+  //   width: 15px;
+  //   border: 2px solid transparent;
+  //   background-clip: content-box;
+  //   background-color: $color-white;
+  // }
+
+  @include scrollbar;
+}
+
+tbody td,
+thead th {
+  width: 19%; /* 19% is less than (100% / 5 cols) = 20% */
+  float: left;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+tbody tr {
+  background-color: $color-bg-grey;
+  background: linear-gradient(
+    to right,
+    $color-dark-blue-light,
+    $color-dark-blue,
+    $color-dark-blue-dark
+  );
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 1rem;
+}

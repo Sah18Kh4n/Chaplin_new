@@ -1,0 +1,209 @@
+$radius: 40;
+
+.dashboard .chain-top-bar {
+  justify-content: space-between;
+}
+.map-area {
+  z-index: 1;
+  height: 42vh;
+  // height: 25vh;
+  background-color: lightgreen;
+  margin: 0 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  transition: 1s ease-in-out;
+}
+@media screen and (max-width: 1200px) {
+  .map-area {
+    height: 30vh;
+  }
+}
+
+.map-area.full {
+  height: calc(100vh - 95px);
+}
+.collapse-container {
+  z-index: 2;
+}
+.circle-area {
+  z-index: 2;
+  cursor: pointer;
+  .up-arrow {
+    z-index: 11;
+    background-color: #000;
+    position: absolute;
+    top: -#{$radius - 10}px;
+    width: #{$radius * 2}px;
+    height: #{$radius * 2 - 10}px;
+    left: calc(50% - #{$radius}px);
+    border-top-left-radius: #{$radius}px;
+    border-top-right-radius: #{$radius}px;
+
+    font-size: 1.5rem;
+    color: $color-grey-light-2;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+
+    img {
+      transition: 0.5s ease-in-out;
+    }
+  }
+
+  .down-arrow {
+    z-index: 11;
+    background-color: #000;
+    position: absolute;
+    top: -#{$radius - 10}px;
+    width: #{$radius * 2}px;
+    height: #{$radius * 2 - 10}px;
+    left: calc(50% - #{$radius}px);
+    border-top-left-radius: #{$radius}px;
+    border-top-right-radius: #{$radius}px;
+
+    font-size: 1.5rem;
+    color: $color-grey-light-2;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+
+    img {
+      transition: 0.5s ease-in-out;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.card-menu {
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+  height: 4rem;
+
+  .btn {
+    border-radius: 0.6rem;
+  }
+}
+
+.card-heading {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: $color-white;
+  font-weight: 100;
+  position: relative;
+
+  p {
+    z-index: 2;
+  }
+}
+
+.bottom-charts {
+  padding: 0 2rem;
+  .row {
+    .col-block-bg {
+      width: 100%;
+      background-color: $color-bg-grey;
+      border: 2px solid #04b795;
+      border-radius: 1rem;
+      padding: 2rem;
+      height: 27vh;
+      overflow: hidden;
+    }
+  }
+
+  .center-bold-text {
+    font-size: 3rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.col-header {
+  // position: absolute;
+  background: linear-gradient($color-dark-blue-light, $color-dark-blue);
+  // height: 20px;
+  // top: -25px;
+  width: 100%;
+  padding: 0.1rem 2rem;
+  border: 1px solid $color-dark-blue-dark;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // margin-top: -55px;
+  color: $color-white;
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+
+  h2 {
+    font-size: 2rem;
+    color: $color-white;
+  }
+}
+
+.player-status-table {
+  color: $color-white;
+
+  tbody {
+    tr:nth-child(even) {
+      background: $color-bg-grey-light;
+    }
+  }
+}
+
+.supply-chain-network {
+  .start-game-button {
+    height: 100%;
+    .btn {
+      line-height: 1;
+      font-size: 2rem;
+      border-radius: 2rem;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    h2 {
+      color: $color-primary;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      font-weight: 200;
+    }
+    p {
+      margin-top: -1rem;
+      font-size: 4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $color-white;
+      line-height: 1.5;
+    }
+
+    .buttons-container {
+      display: flex;
+      .btn {
+        font-size: 1rem;
+        margin: 0.5rem;
+        border-radius: 2rem;
+        padding: 0.25rem 1rem;
+      }
+      .left-buttton {
+        background: transparent;
+      }
+      #minutes {
+        font-size: 1rem;
+      }
+    }
+  }
+}

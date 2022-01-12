@@ -1,0 +1,65 @@
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "~slick-carousel/slick/slick.scss";
+@import "~slick-carousel/slick/slick-theme.scss";
+@import "~ngx-toastr/toastr.css";
+@import  "~leaflet/dist/leaflet.css";
+@import "/src/assets/sass/main";
+@import "~bootstrap/dist/css/bootstrap.css";
+/* You can add global styles to this file, and also import other style files */
+/* .GRADIENT_BOX
+{
+  background : -moz-linear-gradient(0% 50% 0deg,rgba(255, 242, 0, 1) 0%,rgba(254, 236, 1, 1) 10.31%,rgba(253, 218, 4, 1) 24.34%,rgba(251, 190, 9, 1) 40.51%,rgba(247, 150, 15, 1) 58.28%,rgba(243, 99, 24, 1) 77.37%,rgba(238, 37, 34, 1) 97.27%,rgba(237, 28, 36, 1) 100%);
+  background : -webkit-linear-gradient(0deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(255, 242, 0, 1) ),color-stop(0.1031,rgba(254, 236, 1, 1) ),color-stop(0.2434,rgba(253, 218, 4, 1) ),color-stop(0.4051,rgba(251, 190, 9, 1) ),color-stop(0.5828,rgba(247, 150, 15, 1) ),color-stop(0.7737,rgba(243, 99, 24, 1) ),color-stop(0.9727,rgba(238, 37, 34, 1) ),color-stop(1,rgba(237, 28, 36, 1) ));
+  background : -o-linear-gradient(0deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  background : -ms-linear-gradient(0deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF200', endColorstr='#ED1C24' ,GradientType=0)";
+  background : linear-gradient(90deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  border-style : Solid;
+  border-color : #231F20;
+  border-color : rgba(35, 31, 32, 1);
+  border-width : 1px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF200',endColorstr='#ED1C24' , GradientType=1);
+} */
+
+.NormalCharacterStyle
+{
+  font-family : Myriad Pro;
+  font-size : 12px;
+}
+.st0
+{
+  border-style : Solid;
+  border-color : #FFFFFF;
+  border-color : rgba(255, 255, 255, 1);
+  border-width : 0px;
+}
+/* .GRADIENT_BOX
+{
+  background : -webkit-linear-gradient(0deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(255, 242, 0, 1) ),color-stop(0.1031,rgba(254, 236, 1, 1) ),color-stop(0.2434,rgba(253, 218, 4, 1) ),color-stop(0.4051,rgba(251, 190, 9, 1) ),color-stop(0.5828,rgba(247, 150, 15, 1) ),color-stop(0.7737,rgba(243, 99, 24, 1) ),color-stop(0.9727,rgba(238, 37, 34, 1) ),color-stop(1,rgba(237, 28, 36, 1) ));
+  background : linear-gradient(90deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  border-style : Solid;
+  border-color : #231F20;
+  border-color : rgba(35, 31, 32, 1);
+  border-width : 1px;
+} */
+
+.GRADIENT_BOX
+{
+  background : -webkit-linear-gradient(0deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(255, 242, 0, 1) ),color-stop(0.1031,rgba(254, 236, 1, 1) ),color-stop(0.2434,rgba(253, 218, 4, 1) ),color-stop(0.4051,rgba(251, 190, 9, 1) ),color-stop(0.5828,rgba(247, 150, 15, 1) ),color-stop(0.7737,rgba(243, 99, 24, 1) ),color-stop(0.9727,rgba(238, 37, 34, 1) ),color-stop(1,rgba(237, 28, 36, 1) ));
+  background : linear-gradient(90deg, rgba(255, 242, 0, 1) 0%, rgba(254, 236, 1, 1) 10.31%, rgba(253, 218, 4, 1) 24.34%, rgba(251, 190, 9, 1) 40.51%, rgba(247, 150, 15, 1) 58.28%, rgba(243, 99, 24, 1) 77.37%, rgba(238, 37, 34, 1) 97.27%, rgba(237, 28, 36, 1) 100%);
+  border-style : Solid;
+  border-color : #231F20;
+  border-color : rgba(35, 31, 32, 1);
+  border-width : 1px;
+}
+
+$color-primary: #FF5722;
+$color-secondary: #8BC34A;
+$border: #ffc4b3;
+
+.toast-message {
+  font-size: 1rem;
+}

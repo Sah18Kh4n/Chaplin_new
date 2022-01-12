@@ -1,0 +1,163 @@
+<section class="grey-bg">
+  <app-header>
+    <div class="header-title babylon">SUPPLY CHAIN NETWORK</div>
+  </app-header>
+
+  <section class="dashboard">
+    <div class="dashboard-top-bar chain-top-bar">
+      <app-player-bar-item label="Balance">
+        <div class="item-value">{{ balance }}</div>
+        <div class="item-progress">
+          <i class="fa fa-usd" aria-hidden="true"></i>
+        </div>
+        <div class="item-progressbar">
+          <app-progressbar
+            size="sm"
+            [width]="progressWidth"
+            color="red"
+          ></app-progressbar>
+        </div>
+      </app-player-bar-item>
+
+      <app-player-bar-item label="Time">
+        <div class="item-value">
+          <app-count-down [minutes]="time"> </app-count-down>
+        </div>
+        <div class="item-progress">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </div>
+        <div class="item-progressbar">
+          <app-progressbar
+            size="sm"
+            [width]="progressWidth"
+            color="secondary"
+          ></app-progressbar>
+        </div>
+      </app-player-bar-item>
+
+      <app-player-bar-item label="Demand">
+        <div class="item-value">{{ demand }}</div>
+        <div class="item-progress">
+          <i class="fa fa-shield" aria-hidden="true"></i>
+        </div>
+        <div class="item-progressbar">
+          <app-progressbar
+            size="sm"
+            [width]="progressWidth"
+            color="orange"
+          ></app-progressbar>
+        </div>
+      </app-player-bar-item>
+    </div>
+
+    <div class="map-area" [ngClass]="{ full: isCollapsed }">
+      <app-map [latlong]="[51.5, -0.09]"></app-map>
+    </div>
+    <div class="u-relative circle-area" (click)="toggleCollapse()">
+      <div
+        [ngClass]="{
+          'up-arrow': isCollapsed,
+          'down-arrow': !isCollapsed
+        }"
+      >
+        <!-- <i class="fa fa-chevron-up fa-lg"></i> -->
+        <img src="/assets/img/top.png" />
+      </div>
+    </div>
+    <div
+      class="collapse-container"
+      [ngClass]="{ hide: isCollapsed, show: !isCollapsed }"
+    >
+      <div
+        class="
+          card-menu
+          header
+          u-padding-top-extra-small u-padding-bottom-extra-small
+        "
+      >
+        <app-popup position="left" #popupLeft>
+          <button class="btn btn-font-bold sm" (click)="openPopup('left')">
+            <i class="fa fa-info fa-lg left"></i> Instructions
+          </button>
+          <div class="popup-text">
+            <h2>Instructions</h2>
+            <p>
+              As one of the most recognizable and influential video game brands
+              in the world, it's no wonder why there are hundreds of milions of
+              chapplin products being played, worn, and enjoyable by fans in
+              their everyday lives. For over thirty-five years, the game and the
+              brand have truly transcended the barriers of culture and language,
+              resulting ina fun and sxciting playing experience for everyone,
+              everywhere!
+            </p>
+          </div>
+        </app-popup>
+        <h4 class="babylon card-heading">
+          <p>CARD ZONE</p>
+        </h4>
+        <app-popup position="right" #popupRight>
+          <button class="btn btn-font-bold sm" (click)="openPopup('right')">
+            <i class="fa fa-bullseye fa-lg left"></i> Objective
+          </button>
+
+          <div class="popup-text">
+            <h2>Objectives</h2>
+            <p>
+              As one of the most recognizable and influential video game brands
+              in the world, it's no wonder why there are hundreds of milions of
+              chapplin products being played, worn, and enjoyable by fans in
+              their everyday lives. For over thirty-five years, the game and the
+              brand have truly transcended the barriers of culture and language,
+              resulting ina fun and sxciting playing experience for everyone,
+              everywhere!
+            </p>
+          </div>
+        </app-popup>
+      </div>
+
+      <div class="bottom-charts">
+        <div class="row">
+          <div
+            class="
+              col-1-of-3
+              u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+            "
+          >
+            <div class="col-header">
+              Placeholder <i class="fa fa-caret-down fa-lg"></i>
+            </div>
+            <div class="col-block-bg">
+              <p class="center-bold-text">Placeholder For Graph</p>
+            </div>
+          </div>
+          <div
+            class="
+              col-1-of-3
+              u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+            "
+          >
+            <div class="col-header">
+              Live Game Status <i class="fa fa-caret-down fa-lg"></i>
+            </div>
+            <div class="col-block-bg">
+              <p class="center-bold-text">Placeholder For Graph</p>
+            </div>
+          </div>
+          <div
+            class="
+              col-1-of-3
+              u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+            "
+          >
+            <div class="col-header">
+              Player Status <i class="fa fa-caret-down fa-lg"></i>
+            </div>
+            <div class="col-block-bg" style="padding-top: 2px">
+              <app-line-chart [config]="config"></app-line-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

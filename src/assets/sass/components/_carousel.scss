@@ -1,0 +1,49 @@
+.slick-prev:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4rem;
+  content: "\f0d9";
+  color: $color-primary;
+}
+[dir="rtl"] .slick-prev:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4rem;
+  content: "\f0da";
+  color: $color-primary;
+}
+// .slick-prev {
+//   left: 63px;
+// }
+// .slick-next {
+//   right: 63px;
+// }
+// [dir="rtl"] .slick-next {
+//   right: auto;
+//   left: 63px;
+// }
+.slick-next:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4rem;
+  content: "\f0da";
+  color: $color-primary;
+}
+[dir="rtl"] .slick-next:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4rem;
+  content: "\f0d9";
+  color: $color-primary;
+}
+.slick-list {
+  text-align: center;
+}
+.slick-prev, .slick-next {
+  // top: 20%;
+  height: 100%;
+}

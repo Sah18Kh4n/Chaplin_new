@@ -1,0 +1,61 @@
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+
+img{
+  width: 50px;
+  height: 50px;
+}
+
+
+.ex1 {
+  width: 800px;
+  border: 1px  black;
+  overflow-x: auto;
+}
+.nav-item{
+  margin-right: 20px;
+}
+
+.parent {
+  border: 1px;
+  /* margin: 1rem; */
+  /* padding: 2rem 2rem; */
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px ;
+  padding-right: 30px;
+  vertical-align: middle;
+}
+.nav-item{
+  width: 300px;
+}
+.nav-link{
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  font-size: x-large;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding-top: 30px;
+  cursor: pointer;
+}
+.nav-link.active{
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  text-align: center;
+  font-size: x-large;
+  background-color: #04b795;
+  color: white;
+  border-radius: 20px;
+}
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+

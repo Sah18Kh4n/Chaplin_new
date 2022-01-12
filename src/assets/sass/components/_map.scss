@@ -1,0 +1,109 @@
+$color-orange: #ff8000;
+$color-purple: #4d39ff;
+$color-blue: #0081ea;
+
+.map-container {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2rem;
+  //   margin: 30px;
+}
+
+.map-area {
+  .legends,
+  .marker-details {
+    position: absolute;
+    z-index: 401;
+    left: 1%;
+    display: flex;
+
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+
+  .legends {
+    top: 5%;
+    text-align: center;
+    color: $color-white;
+    background-color: black;
+    .color-blue {
+      background-color: $color-blue;
+      padding: 0.5rem 2rem;
+      margin: 2px;
+      border-radius: 0.5rem;
+    }
+
+    .color-purple {
+      background-color: $color-purple;
+      padding: 0.5rem 2rem;
+      margin: 2px;
+      border-radius: 0.5rem;
+    }
+
+    .color-orange {
+      background-color: $color-orange;
+      padding: 0.5rem 2rem;
+      margin: 2px;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .marker-details {
+    bottom: 5%;
+    .item {
+      background-color: black;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $color-dark-blue-light;
+      font-size: 1.5rem;
+      border-radius: 1rem;
+      margin: 2px;
+      padding: 0.2rem 1rem;
+      font-weight: 600;
+
+      img {
+        width: 36px;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.map-frame {
+  border: 2px solid #000;
+  border-radius: 1rem;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.leaflet-verticalcenter {
+  /********************************************/
+  /* Same as .leaflet-top and .leaflet-bottom */
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  /********************************************/
+  top: 80%;
+  // transform: translateY(-50%);
+  padding-top: 10px;
+}
+
+.leaflet-verticalcenter .leaflet-control {
+  margin-bottom: 10px;
+}
+.infobox {
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-size: 18px;
+}

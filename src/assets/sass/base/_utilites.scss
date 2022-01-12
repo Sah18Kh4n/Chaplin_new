@@ -1,0 +1,168 @@
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-horizontal-extra-small {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.u-margin-horizontal-small {
+  margin-left: 1.5rem !important;
+  margin-right: 1.5rem !important;
+}
+
+.u-margin-horizontal-medium {
+  margin-left: 4rem !important;
+  margin-right: 4rem !important;
+}
+.u-margin-horizontal-big {
+  margin-left: 8rem !important;
+  margin-right: 8rem !important;
+}
+
+
+
+.u-padding-horizontal-extra-small {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.u-padding-horizontal-small {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.u-padding-horizontal-medium {
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+}
+.u-padding-horizontal-big {
+  padding-left: 8rem !important;
+  padding-right: 8rem !important;
+}
+
+
+
+
+.u-margin-bottom-extra-small {
+  margin-bottom: 0.5rem !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+
+.u-margin-top-extra-small {
+  margin-top: 0.5rem !important;
+}
+
+.u-margin-top-small {
+  margin-top: 1.5rem !important;
+}
+
+.u-margin-top-medium {
+  margin-top: 4rem !important;
+}
+.u-margin-top-big {
+  margin-top: 8rem !important;
+}
+.u-padding-bottom-extra-small {
+  padding-bottom: 0.5rem !important;
+}
+.u-padding-bottom-small {
+  padding-bottom: 1.5rem !important;
+}
+
+.u-padding-bottom-medium {
+  padding-bottom: 4rem !important;
+}
+.u-padding-bottom-big {
+  padding-bottom: 8rem !important;
+}
+
+.u-padding-top-extra-small {
+  padding-top: 0.5rem !important;
+}
+
+.u-padding-top-small {
+  padding-top: 1.5rem !important;
+}
+
+.u-padding-top-medium {
+  padding-top: 4rem !important;
+}
+.u-padding-top-big {
+  padding-top: 8rem !important;
+}
+
+.u-center {
+  margin: auto;
+}
+
+.u-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.u-left {
+  margin-right: auto;
+  text-align: left;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.card {
+  max-width: 450px;
+  margin: auto;
+}
+
+.box {
+  padding: 4rem 2rem;
+  border: 3px solid $color-primary;
+  border-radius: 2rem;
+  background: rgba(73, 106, 160, 0.8);
+}
+
+.color-white {
+  color: $color-white;
+}
+.color-primary {
+  color: $color-primary;
+}
+.color-primary-bright {
+  color: $color-primary-bright;
+  font-weight: 600;
+}
+
+
+.u-relative {
+  position: relative;
+}
+
+.u-absolute {
+  position: absolute;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+}
+.width-50 {
+  width: 50%;
+}

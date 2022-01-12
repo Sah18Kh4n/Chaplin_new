@@ -1,0 +1,127 @@
+<section class="grey-bg dashboard-page player-dashboard">
+  <app-header>
+    <div class="header-title babylon">DASHBOARD</div>
+  </app-header>
+  <div class="row">
+    <div
+      class="
+        col-1-of-3
+        u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+      "
+    >
+      <div class="left-panel">
+        <div class="flex-item round">
+          <h2 class="babylon">ROUND</h2>
+          <p>{{ round }} of {{ totalRounds }}</p>
+        </div>
+        <div class="flex-item time">
+          <div class="time-box">
+            <h3>Time Remaining</h3>
+            <p><app-count-down [minutes]="2"> </app-count-down></p>
+          </div>
+        </div>
+        <div class="flex-item demand">
+          <h4>Demand</h4>
+          <p>1500 Bushels</p>
+          <p class="time-zone">(09:45 PST)</p>
+        </div>
+        <div class="flex-item board u-margin-top-small">
+          <div class="heading">Leaderboard</div>
+
+          <div class="rating" *ngFor="let rating of ratings">
+            <div class="rating-item">
+              <app-rating [ratings]="rating.stars"></app-rating>
+            </div>
+            <div class="rating-item">{{ rating.player }}</div>
+            <div class="rating-item">
+              {{ rating.price | currency: "USD":"symbol":"1.0-0" }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="
+        col-2-of-3
+        u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+        grey-bg
+      "
+    >
+      <div
+        class="chart-block dashboard-chart"
+        [ngClass]="{ full: isCollapsed }"
+      >
+        <app-line-chart [config]="config" #lineChart></app-line-chart>
+      </div>
+      <div
+        class="u-relative circle-area u-margin-top-small"
+        (click)="toggleCollapse()"
+      >
+        <div
+          [ngClass]="{
+            'up-arrow': isCollapsed,
+            'down-arrow': !isCollapsed
+          }"
+        >
+          <!-- <i class="fa fa-chevron-up fa-lg"></i> -->
+          <img src="/assets/img/top.png" />
+        </div>
+      </div>
+      <div
+        class="collapse-container"
+        [ngClass]="{ hide: isCollapsed, show: !isCollapsed }"
+      >
+        <div class="bottom-block u-relative">
+          <div class="row u-padding-horizontal-small u-padding-top-extra-small">
+            <div
+              class="
+                col-1-of-2
+                u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+              "
+            >
+              <div class="col-header">
+                Game Progress <i class="fa fa-caret-down fa-lg"></i>
+              </div>
+              <div class="col-block-bg">
+                <table class="table">
+                  <thead
+                    class="u-margin-top-extra-small u-margin-bottom-extra-small"
+                  >
+                    <tr>
+                      <th style="width: 15%">Round</th>
+                      <th style="width: 26%">Purchase_sku</th>
+                      <th style="width: 26%">Demand_sku</th>
+                      <th style="width: 26%">Bank Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let progress of gameProgress">
+                      <td style="width: 15%">{{ progress }}</td>
+                      <td style="width: 26%">sku1=200, sku=300</td>
+                      <td style="width: 26%">sku=600, sku1=100</td>
+                      <td style="width: 26%">$10,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div
+              class="
+                col-1-of-2
+                u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+              "
+            >
+              <div class="col-header">
+                Game Input Area <i class="fa fa-caret-down fa-lg"></i>
+              </div>
+              <div class="col-block-bg">
+                <app-game-input-area></app-game-input-area>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

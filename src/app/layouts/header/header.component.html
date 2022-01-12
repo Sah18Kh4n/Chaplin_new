@@ -1,0 +1,30 @@
+<header class="header">
+  <!-- <ng-content select=".header-left-icons"></ng-content> -->
+  <div class="header-left-icons">
+    <a style="cursor: pointer;" (click)="goBack()"><img src="/assets/img/header/exit.png" /></a>
+  </div>
+  <ng-content select=".header-title"></ng-content>
+  <!-- <ng-content select=".header-menu"></ng-content> -->
+  <div class="header-menu">
+    <ul class="header-menu">
+      <li class="menu-item">
+        <a routerLink="/"><i class="fa fa-user"></i>&nbsp;User: {{userType}} 1</a>
+      </li>
+      <li class="menu-item">
+        <a (click)="gotToHome()" style="cursor: pointer;"><i class="fa fa-home"></i></a>
+      </li>
+      <li class="menu-item">
+        <a href="/"><i class="fa fa-question-circle"></i></a>
+      </li>
+      <li class="menu-item">
+        <a href="/"><i class="fa fa-bell"></i></a>
+      </li>
+      <li class="menu-item">
+        <a href="/"><i class="fa fa-cog"></i></a>
+      </li>
+      <li class="menu-item">
+        <a routerLink="/auth/logout"><i class="fa fa-power-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</header>

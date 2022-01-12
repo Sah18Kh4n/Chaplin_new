@@ -1,0 +1,152 @@
+<section class="grey-bg dashboard-page">
+  <app-header>
+    <div class="header-title babylon">DASHBOARD</div>
+  </app-header>
+  <div class="chart-block" [ngClass]="{ full: isCollapsed }">
+    <div class="row" style="height: 100%;">
+      <div
+        class="
+          col-1-of-3
+          u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+          flex-column
+        "
+        style="justify-content: space-evenly; height: 100%"
+      >
+        <div class="game-selector u-margin-top-medium">
+          <app-custom-select
+            [options]="[
+              { label: 'Game ID 1', value: '1' },
+              { label: 'Game ID 2', value: '2' },
+              { label: 'Game ID 3', value: '3' }
+            ]"
+          ></app-custom-select>
+        </div>
+        <div class="game-details">
+          <table class="table" style="font-size: 1rem;">
+            <thead class="u-margin-top-extra-small u-margin-bottom-extra-small">
+              <tr>
+                <th style="width: 25%">Player ID</th>
+                <th style="width: 25%">Demand Skus</th>
+                <th style="width: 25%">Purchase Skus</th>
+                <th style="width: 25%">Bank Bal</th>
+              </tr>
+            </thead>
+            <tbody style="color: #fff">
+              <tr *ngFor="let progress of gameProgress">
+                <td style="width: 25%">Player {{ progress }}</td>
+                <td style="width: 25%">{{'{sku1=0,sku2=0}'}}</td>
+                <td style="width: 25%">{{'{sku1=600,sku2=100}'}}</td>
+                <td style="width: 25%">1500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="
+          col-2-of-3
+          u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+        "
+        style="height: 100%;"
+      >
+        <div class="dashboard-chart" [ngClass]="{ full: isCollapsed }" style="height: 100%;">
+          <app-line-chart [config]="config" #lineChart></app-line-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="u-relative circle-area u-margin-top-small"
+    (click)="toggleCollapse()"
+  >
+    <div
+      [ngClass]="{
+        'up-arrow': isCollapsed,
+        'down-arrow': !isCollapsed
+      }"
+    >
+      <!-- <i class="fa fa-chevron-up fa-lg"></i> -->
+      <img src="/assets/img/top.png" />
+    </div>
+  </div>
+  <div
+    class="collapse-container"
+    [ngClass]="{ hide: isCollapsed, show: !isCollapsed }"
+  >
+    <div class="bottom-block u-relative">
+      <div class="row u-padding-horizontal-small u-padding-top-extra-small">
+        <p class="u-padding-horizontal-small">
+          Game Progress (All transaction details)
+        </p>
+        <div
+          class="
+            col-1-of-2
+            u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+          "
+        >
+          <div class="col-header">
+            Game Progress <i class="fa fa-caret-down fa-lg"></i>
+          </div>
+          <div class="col-block-bg">
+            <table class="table">
+              <thead
+                class="u-margin-top-extra-small u-margin-bottom-extra-small"
+              >
+                <tr>
+                  <th>Round</th>
+                  <th>Player ID</th>
+                  <th>Demand</th>
+                  <th>Farmer 1</th>
+                  <th>Farmer 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let progress of gameProgress">
+                  <td>{{ progress }}</td>
+                  <td>Player {{ progress }}</td>
+                  <td>56</td>
+                  <td>60</td>
+                  <td>100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          class="
+            col-1-of-2
+            u-padding-horizontal-extra-small u-margin-horizontal-extra-small
+          "
+        >
+          <div class="col-header">
+            Game Leaderboard <i class="fa fa-caret-down fa-lg"></i>
+          </div>
+          <div class="col-block-bg">
+            <table class="table">
+              <thead
+                class="u-margin-top-extra-small u-margin-bottom-extra-small"
+              >
+                <tr>
+                  <th>Rank</th>
+                  <th>Player ID</th>
+                  <th>Revenue</th>
+                  <th>In-Hand Inventory</th>
+                  <th>Actual Sales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let leaderboard of gameLeaderboard">
+                  <td>{{ leaderboard }}</td>
+                  <td>Player {{ leaderboard }}</td>
+                  <td>1000</td>
+                  <td>50</td>
+                  <td>50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

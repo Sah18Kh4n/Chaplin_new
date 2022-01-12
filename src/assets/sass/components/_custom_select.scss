@@ -1,0 +1,169 @@
+// .custom-select > select {
+//   /* Reset Select */
+//   appearance: none;
+//   outline: 0;
+//   border: 0;
+//   box-shadow: none;
+//   /* Personalize */
+//   flex: 1;
+//   padding: 0 1em;
+//   color: #fff;
+//   background-color: var(--darkgray);
+//   background-image: none;
+//   cursor: pointer;
+// }
+// /* Remove IE arrow */
+// .custom-select > select::-ms-expand {
+//   display: none;
+// }
+// /* Custom Select wrapper */
+// .custom-select {
+//   position: relative;
+//   display: flex;
+//   width: 20em;
+//   height: 3em;
+//   border-radius: 0.25em;
+//   overflow: hidden;
+//   background: linear-gradient($color-dark-blue-light, $color-dark-blue);
+// }
+// /* Arrow */
+// .custom-select::after {
+//   content: "\f0d7";
+//   font-family: FontAwesome;
+//   position: absolute;
+//   font-size: 18px;
+//   top: 0;
+//   right: 0;
+//   padding: 0.4rem 1em;
+//   background-color: $color-dark-blue-light;
+// //   background: linear-gradient($color-dark-blue-light, $color-dark-blue);
+//   color: $color-white;
+//   transition: 0.25s all ease;
+//   pointer-events: none;
+// }
+// /* Transition */
+// .custom-select:hover::after {
+//   color: $color-white;
+// }
+
+$background: $color-dark-blue-dark;
+$select-color: $color-white;
+$select-background: $color-dark-blue-light;
+// $select-width: 220px;
+$select-width: 100%;
+$select-height: 40px;
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 1.4rem;
+  color: $select-color;
+  width: $select-width;
+  height: $select-height;
+  font-weight: 500;
+}
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $select-background;
+  // padding: 4px 15px;
+  padding: 0.2rem 2rem;
+  border-radius: 0.5rem;
+  transition: 0.2s ease-in;
+  font-size: 1.4rem;
+  // font-weight: 600;
+  //   @include transition(all 0.2s ease-in);
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    // border-color: $select-color transparent transparent transparent;
+    position: absolute;
+    top: -10px;
+    padding: 4px 8px;
+    right: 14px;
+    content: "\f0d7";
+    font-family: FontAwesome;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  &:hover {
+    background-color: darken($select-background, 2);
+    // background-color: lighten($color-primary, 2);
+  }
+  &:active,
+  &.active {
+    background-color: darken($select-background, 5);
+    // background-color: lighten($color-primary, 5);
+    &:after {
+      top: -15px;
+      padding: 4px 8px;
+      //   top: 9px;
+      //   border-color: transparent transparent $select-color transparent;
+      content: "\f0d8";
+      font-family: FontAwesome;
+    }
+  }
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  //   background-color: darken($select-background, 5);
+  border-radius: 0.5rem;
+
+  li {
+    margin: 0;
+    margin-top: 1px;
+    padding: 4px 0;
+    text-indent: 15px;
+    border-top: 1px solid transparent;
+    transition: 0.15s ease-in;
+    background-color: lighten($color-primary, 5);
+    // @include transition(all 0.15s ease-in);
+    // &:nth-child(even) {
+    //   // background-color: $color-bg-grey;
+    //   background-color: lighten($color-primary, 5);
+    // }
+    // &:nth-child(odd) {
+    //   background-color: darken($select-background, 5);
+    // }
+    &:hover {
+      // color: $select-background;
+      color: darken($color-primary, 5);
+      background: $select-color;
+    }
+    &.selected {
+      background-color: $color-bg-grey;
+      color: $color-white;
+    }
+    &[rel="hide"] {
+      display: none;
+    }
+    border-radius: 0.5rem;
+  }
+}
+
+.col-header-select {
+  width: 100%;
+  .select-styled {
+    border-radius: 1rem;
+  }
+}
